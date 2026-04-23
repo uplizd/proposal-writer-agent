@@ -1,14 +1,42 @@
 <!DOCTYPE html>
+<!--
+  Proposal Writer Agent — static shell for the Vite + React playground.
+  AI logic runs on UPLIZD; this HTML file only boots the SPA.
+-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Proposal Writer Agent — open-source chat UI for the UPLIZD Marketplace flow (HubSpot, Google Docs, Gmail, Web Search)."
+    />
+    <meta name="theme-color" content="#BA7517" />
+    <meta name="color-scheme" content="light dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Proposal Writer Agent" />
+    <meta
+      property="og:description"
+      content="Chat playground for the Proposal Writer Agent flow powered by UPLIZD."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Proposal Writer Agent" />
+    <meta
+      name="twitter:description"
+      content="Secure proxy + React UI for running the Proposal Writer Agent on UPLIZD."
+    />
     <title>Proposal Writer Agent</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Lora:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
+    <noscript>
+      <p>This application requires JavaScript to run the chat playground.</p>
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

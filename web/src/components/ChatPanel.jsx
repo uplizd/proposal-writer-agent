@@ -1,12 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import Message from "./Message.jsx";
 import ThinkingIndicator from "./ThinkingIndicator.jsx";
-
-function statusLabel(status) {
-  if (status === "running") return "Flow running on UPLIZD…";
-  if (status === "error") return "Error — check console";
-  return "Ready";
-}
+import {
+  CHAT_HEADER_DESCRIPTION,
+  CHAT_HEADER_TITLE,
+  COMPOSER_PLACEHOLDER,
+  EMPTY_STATE,
+  RUN_BUTTON_BUSY,
+  RUN_BUTTON_IDLE,
+} from "../config/chatStrings.js";
+import { chatPanelStatusLabel } from "../lib/statusLabels.js";
 
 export default function ChatPanel({ messages, status, onSend }) {
   const [draft, setDraft] = useState("");
@@ -42,24 +45,18 @@ export default function ChatPanel({ messages, status, onSend }) {
   return (
     <div className="chat">
       <header className="chat-header">
-        <div className="chat-header-title">Conversation</div>
-        <p className="chat-header-desc">
-          Discovery notes and deal context — the agent drafts proposals with ROI
-          and tool integrations.
-        </p>
+        <div className="chat-header-title">{CHAT_HEADER_TITLE}</div>
+        <p className="chat-header-desc">{CHAT_HEADER_DESCRIPTION}</p>
       </header>
 
       <div className="chat-messages">
         {isEmpty ? (
           <div className="chat-empty">
             <div className="chat-empty-icon" aria-hidden>
-              PW
+              {EMPTY_STATE.iconLetters}
             </div>
-            <div className="chat-empty-title">Start a new session</div>
-            <p className="chat-empty-text">
-              Use a quick prompt from the sidebar or describe your prospect below.
-              Shift+Enter adds a new line.
-            </p>
+            <div className="chat-empty-title">{EMPTY_STATE.title}</div>
+            <p className="chat-empty-text">{EMPTY_STATE.body}</p>
           </div>
         ) : (
           <>
@@ -80,7 +77,7 @@ export default function ChatPanel({ messages, status, onSend }) {
             value={draft}
             onChange={handleInput}
             onKeyDown={handleKey}
-            placeholder="Describe the prospect or paste discovery notes…"
+            placeholder={COMPOSER_PLACEHOLDER}
             rows={1}
             disabled={status === "running"}
             aria-label="Message input"
@@ -91,14 +88,14 @@ export default function ChatPanel({ messages, status, onSend }) {
             onClick={handleSend}
             disabled={!draft.trim() || status === "running"}
           >
-            {status === "running" ? "Running…" : "Run"}
+            {status === "running" ? RUN_BUTTON_BUSY : RUN_BUTTON_IDLE}
           </button>
         </div>
       </div>
 
       <div className="chat-status" data-status={status}>
         <span className="chat-status-dot" aria-hidden />
-        <span className="chat-status-text">{statusLabel(status)}</span>
+        <span className="chat-status-text">{chatPanelStatusLabel(status)}</span>
       </div>
     </div>
   );
