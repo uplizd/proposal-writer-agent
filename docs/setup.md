@@ -2,7 +2,7 @@
 
 ## Step 1 — Install the flow from UPLIZD Marketplace
 
-1. Go to **[https://marketplace.uplizd.ai/marketplace/proposal-writer-agent](https://marketplace.uplizd.ai/marketplace/proposal-writer-agent)**
+1. Go to **[https://uplizd.ai/marketplace/proposal-writer-agent](https://uplizd.ai/marketplace/proposal-writer-agent)**
 2. Click **Install**
 3. After install, open the flow in your UPLIZD workspace
 4. Copy the **Flow ID** from the URL:
