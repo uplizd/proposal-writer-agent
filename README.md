@@ -27,6 +27,19 @@ You (browser)  →  this web UI  →  Express proxy  →  UPLIZD flow  →  HubS
 - **Dark mode** — follows system preference
 - **Session management** — each conversation gets a unique session ID
 
+---
+
+## Extension ideas
+
+Ideas that respect the current **architecture** (proxy + UPLIZD flow); optional UI additions could stay limited to `Sidebar.jsx` quick prompts only:
+
+- **Tiered packages** — In the flow, standardize the three ROI tiers (scope, assumptions, risks) so every proposal follows the same executive-summary shape.
+- **Deal-context templates** — HubSpot-driven placeholders (stage, amount, stakeholders) merged into the Google Doc structure before PDF export.
+- **Evidence pack** — Web Search step constrained to named industries or regions so case studies cited in the doc are relevant to the prospect.
+- **Follow-up cadence** — Gmail drafts differentiated by scenario (first send vs. bump vs. exec intro) using the same secure proxy pattern.
+
+---
+
 ## Stack
 
 | Layer | Tech |
